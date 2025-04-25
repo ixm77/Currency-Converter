@@ -8,7 +8,8 @@
 
     <body>
         <div class="container-fluid" id="header">
-            <h1>QuickExchange</h1>
+            <h1>QuickExchange</h1><br>
+            <h6>The Number One* Money Website!</h6>
         </div>
         
         <nav class="navbar navbar-expand-sm" id="navbar">
@@ -39,6 +40,69 @@
                 </div>
             </div>
         </nav>
+    
+    <div class="container-fluid text-center" id="page-title">
+        <h1>Currency Converter</h1>
+    </div>
+
+    <div class="container-fluid" id="main">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <div class="row" style="padding-bottom: 5%;">
+                                <div class="col">
+                                    <select class="form-select" name="currency1" id="currency1" required disabled>
+                                        <option value="1">USD</option>
+                                        <option value="2">EUR</option>
+                                        <option value="3">GBP</option>
+                                        <option value="4">JPY</option>
+                                        <option value="5">CAD</option>
+                                        <option value="6">AUD</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <select class="form-select" name="currency2" id="currency2" required>
+                                        <option value="1">USD</option>
+                                        <option selected value="2">EUR</option>
+                                        <option value="3">GBP</option>
+                                        <option value="4">JPY</option>
+                                        <option value="5">CAD</option>
+                                        <option value="6">AUD</option>
+                                        <option value="7">CNY</option>
+                                    </select>
+                                </div>
+                            </div>   
+                        </form>
+                        <div class="row">
+                            <div class="col">
+                                <input type="number" class="form-control" placeholder="Enter amount" name="amount" id="amount" required>
+                            </div>
+                            <div class="col" style="text-align: center;" id="result">
+                                ( Result )
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="margin-top: 10%;" onclick="changeResult(amount, currency1, currency2)">Convert</button>   
+                    </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <img src="media/exchange.jpeg" alt="Currency Exchange" style="width: 50%; padding-bottom: 5%; float: right;">
+                                <h2>Currency Converter</h2>
+                                <p>Convert between different currencies!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>        
 
         <footer class="footer page-footer font-small>">
             <div class="container">
@@ -49,4 +113,43 @@
         </footer>
     </body>
 
+    <script>
+        let result = document.getElementById("result");
+        let usd = 1.0;
+        let eur = 0.88;
+        let gbp = 0.75;
+        let jpy = 143.96;
+        let cad = 1.39;
+        let aud = 1.57;
+        let cny = 7.29;
+        
+        function changeResult(input, currency1, currency2) {
+
+            let amount = Number(input.value);
+            if (currency2.value == 1) {
+                amount = amount * usd;
+                result.innerHTML = amount.toFixed(2) + " USD";
+            } else if (currency2.value == 2) {
+                amount = amount * eur;
+                result.innerHTML = amount.toFixed(2) + " EUR";
+            } else if (currency2.value == 3) {
+                amount = amount * gbp;
+                result.innerHTML = amount.toFixed(2) + " GBP";
+            } else if (currency2.value == 4) {
+                amount = amount * jpy;
+                result.innerHTML = amount.toFixed(2) + " JPY";
+            } else if (currency2.value == 5) {
+                amount = amount * cad;
+                result.innerHTML = amount.toFixed(2) + " CAD";
+            } else if (currency2.value == 6) {
+                amount = amount * aud;
+                result.innerHTML = amount.toFixed(2) + " AUD";
+            }
+            else if (currency2.value == 7) {
+                amount = amount * cny;
+                result.innerHTML = amount.toFixed(2) + " CNY";
+            }
+            
+        }
+    </script>
 </html>
