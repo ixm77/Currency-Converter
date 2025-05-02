@@ -25,8 +25,30 @@
     margin: 0;
 }
 
-#main {
+#history_main {
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
 
+#currencies_main {
+    padding-top: 5%;
+    padding-left: 25%;
+    padding-right: 15%;
+}
+
+#currencies_main li {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+#exchanges_main h2 {
+    padding-top: 5%;
+}
+
+#exchanges_main li{
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 #page-title {
